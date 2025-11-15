@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <img src="images/logo.png" alt="Desind GNU/Linux" style="width: 15px;">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <img src="/images/logo.png" alt="Desind GNU/Linux Logo" style="width: 150px; height: auto;">
     <title>Desind - Linux for Creators & Gamers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -18,35 +19,35 @@
             --bg-secondary: #000000;
             --bg-card: #000000;
             --text-primary: #ffffff;
-            --text-secondary: #e0e0e0;
+            --text-secondary: #dddddd;
             --accent: #ffffff;
             --accent-hover: #ffffff;
             --gradient-1: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
             --gradient-2: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
             --gradient-3: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-            --shadow: 0 10px 40px rgb(0, 0, 0);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         [data-theme="light"] {
             --bg-primary: #ffffff;
-            --bg-secondary: #ffffff;
+            --bg-secondary: #f8f9fa;
             --bg-card: #ffffff;
-            --text-primary: #000000;
+            --text-primary: #1a1a1a;
             --text-secondary: #000000;
             --accent: #000000;
             --accent-hover: #000000;
             --gradient-1: linear-gradient(135deg, #000000 0%, #000000 100%);
             --gradient-2: linear-gradient(135deg, #000000 0%, #000000 100%);
             --gradient-3: linear-gradient(135deg, #000000 0%, #000000 100%);            
-            --shadow: 0 10px 40px rgba(0, 0, 0, 0.37);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: system-ui;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            transition: background 1.0s ease, color 0.5s ease;
+            transition: background 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
         }
 
@@ -64,7 +65,7 @@
             top: 0;
             z-index: 1000;
             background: var(--bg-primary);
-            backdrop-filter: blur(200px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--accent);
             transition: all 0.3s ease;
         }
@@ -82,10 +83,15 @@
         .logo {
             font-size: 28px;
             font-weight: bold;
-            background: var(--gradient-3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -143,7 +149,9 @@
         }
 
         .theme-toggle::before {
-            content: '🌙';
+            content: '\f186';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
             width: 20px;
             height: 20px;
@@ -155,10 +163,11 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
+            color: var(--accent);
         }
 
         [data-theme="light"] .theme-toggle::before {
-            content: '☀️';
+            content: '\f185';
             transform: translateX(22px);
         }
 
@@ -477,7 +486,9 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div href="https://ibb.co/yc0LYMgv"> <img src="https://i.ibb.co/yc0LYMgv/desind.png" border="0"> </a> </div>
+            <div class="logo">
+                <img src="images/desind-logo.png" alt="Desind Logo">
+            </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#specs">Specs</a>
@@ -567,7 +578,7 @@
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Display Manager</div>
-                    <div class="spec-value">Greetd + TUIgreet</div>
+                    <div class="spec-value">greetd + tuigreet</div>
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">User Interface</div>
@@ -575,11 +586,11 @@
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Package Management</div>
-                    <div class="spec-value">MAS (Based on PkgSrc) + Flatpak + AppImage</div>
+                    <div class="spec-value">pkgsrc (mas) + Flatpak + AppImage</div>
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Shell</div>
-                    <div class="spec-value">Zsh</div>
+                    <div class="spec-value">zsh</div>
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Bootloader</div>
@@ -603,8 +614,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Desind GNU/Linux. Built for creators, By creators.</p>
-            <p>&copy; Licesnsed at GPLv3 License.</p>
+            <p>&copy; 2024 Desind Linux. Built for creators, by creators.</p>
         </div>
     </footer>
 
