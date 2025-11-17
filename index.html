@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Desind - Linux for Creators & Gamers</title>
+    <title>Desind</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
@@ -21,8 +21,6 @@
             --text-secondary: #ffffff;
             --accent: #ffffff;
             --accent-hover: #ffffff;
-            --gradient-1: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-            --gradient-2: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
             --gradient-3: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
             --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
@@ -86,12 +84,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            height: 12px;
+            height: 16px;
         }
 
         .logo img {
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 35px;
             object-fit: contain;
         }
 
@@ -109,7 +107,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--accent-hover);
         }
 
         /* Social Links */
@@ -138,7 +136,7 @@
         /* Theme Toggle */
         .theme-toggle {
             width: 50px;
-            height: 26px;
+            height: 25px;
             background: var(--bg-card);
             border-radius: 50px;
             position: relative;
@@ -176,7 +174,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 300px 30px;
+            padding: 100px 25px 200px;
             text-align: left;
             position: relative;
         }
@@ -189,14 +187,51 @@
             transform: translateX(-50%);
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.034) 40%, transparent 70%);
             pointer-events: none;
             animation: pulse 4s ease-in-out infinite;
-        }
+        }    
 
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
             50% { opacity: 0.8; transform: translateX(-50%) scale(1.05); }
+        }
+
+        .hero-screenshot {
+            width: 100%;
+            max-width: 1280px;
+            max-height: 720px;
+            margin: 0 auto 50px;
+            margin-top: -150px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .hero-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-screenshot:hover {
+            transform: translateY(-10px);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-screenshot:hover img {
+            transform: scale(1.0007);
+        }
+
+        [data-theme="light"] .hero-screenshot {
+            border: 2px solid #000000;
+        }
+
+        [data-theme="light"] .hero-screenshot:hover {
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
         }
 
         .hero-logo {
@@ -212,9 +247,9 @@
         }
 
         h1 {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 50px;
+            font-weight: 750;
+            margin-bottom: 7px;
             background: var(--gradient-3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -485,6 +520,11 @@
             .logo {
                 font-size: 24px;
             }
+
+            .hero-screenshot {
+                width: 95%;
+                margin-bottom: 30px;
+            }
         }
 
         /* Smooth Scroll */
@@ -513,17 +553,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-logo"></div>
-            <h1>Desind</h1>
-            <p class="hero-subtitle">Linux Perfected for Gaming, Creation & Development</p>
+     <section class="hero" id="hero">    
+            <h1>Desind Linux</h1>
+            <p class="hero-subtitle">A Linux Distribution Perfected for Gaming, Content Creation & Development</p>
             <div class="cta-buttons">
                 <a href="#download" class="btn btn-primary">Download Now</a>
                 <a href="#features" class="btn btn-secondary">Explore Features</a>
             </div>
         </div>
     </section>
+
+    <div class="container">
+        <div class="hero-screenshot">
+            <img src="https://Desind-Linux.github.io/images/photo_2025-11-17_00-31-54.jpg" alt="Desind Preview">
+        </div>
 
     <!-- Features Section -->
     <section class="features" id="features">
@@ -630,7 +673,7 @@
         </a>
     </div>            
 </div>
-    <p>Current Version: 2026.1.1.</p>        
+    <p>Current Version: 2026.1</p>        
     <p>License: GPLv3.</p>
     <p>&copy; 2026 Desind Organization. Made for Creators, by Creators.</p>
 </div>                
